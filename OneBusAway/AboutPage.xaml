@@ -1,0 +1,100 @@
+﻿<!--
+ Copyright 2013 Shawn Henry, Rob Smith, and Michael Friedman
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<phone:PhoneApplicationPage 
+    x:Class="OneBusAway.WP7.View.AboutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:tilt="clr-namespace:ControlTiltEffect"
+    tilt:TiltEffect.IsTiltEnabled="True"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource OBAForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="{StaticResource OBAPrimaryBrush}">
+
+        <Image 
+            HorizontalAlignment="Center"  
+            Stretch="None" 
+            VerticalAlignment="Top" 
+            Source="/SplashImage.png" 
+            />
+        <Button 
+            BorderBrush="{StaticResource OBAForegroundBrush}" 
+            Foreground="{StaticResource OBAForegroundBrush}" 
+            Content="send feedback" 
+            Height="72" 
+            HorizontalAlignment="Left" 
+            Margin="121,520,0,0" 
+            Name="FeedbackButton" 
+            VerticalAlignment="Top" 
+            Width="236" 
+            Click="FeedbackButton_Click" 
+            />
+        <TextBlock 
+            Foreground="{StaticResource OBAForegroundBrush}" 
+            Height="73" 
+            HorizontalAlignment="Left" 
+            Margin="63,374,0,0" 
+            Name="AddressBlock" 
+            Text="onebusaway.org" 
+            VerticalAlignment="Top" 
+            FontSize="48" 
+            Width="350" 
+            MouseLeftButtonUp="AddressBlock_MouseLeftButtonUp" 
+            />
+        <StackPanel VerticalAlignment="Bottom">
+            <TextBlock 
+                Foreground="{StaticResource OBAForegroundBrush}" 
+                HorizontalAlignment="Stretch"
+                TextAlignment="Center"
+                Text=
+                "Windows Phone app by Rob Smith, Shawn Henry, Michael Friedman, and David Robinson" 
+                TextWrapping="Wrap"
+                Margin="10,10,10,0"
+                />
+            <TextBlock 
+                Foreground="{StaticResource OBAForegroundBrush}" 
+                HorizontalAlignment="Center" 
+                Text="https://github.com/OneBusAway/onebusaway-windows-phone" 
+				FontSize="15.5"
+                MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" 
+                Margin="10"
+                />
+        </StackPanel>
+        <TextBlock Foreground="{StaticResource OBAForegroundBrush}" Height="30" HorizontalAlignment="Right" Margin="0,10,14,0" Name="VersionTextBlock" Text="Version 1.0" VerticalAlignment="Top" />
+    </Grid>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>
